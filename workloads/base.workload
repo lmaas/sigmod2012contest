@@ -1,0 +1,178 @@
+// Copyright (c) 2012 TU Dresden - Database Technology Group
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy 
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
+
+// BASEWORKLOAD
+// 
+// Note:
+//   This workload specification contains the configuration as used by the basedriver
+
+{
+  "range portion": 10,
+  "point portion": 40,
+  "update portion": 20,
+  "insert portion": 15,
+  "delete portion": 15,
+  "extensive statistics": true,
+  "indices": [
+
+  // INDEX 0
+  {
+    "name": "index_0",
+    "size": "32 MB",
+    "payload size": 8,
+    "attributes":
+    [
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": 1,
+          "max": 1000
+        }
+      },
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": 2001,
+          "max": 3000
+        }
+      },
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": 3001,
+          "max": 4000
+        }
+      }
+    ]
+  },
+
+  // INDEX 1
+  {
+     "name": "index_1",
+     "size": "16 MB",
+     "payload size": 8,
+     "attributes":
+     [
+       {
+         "type": "INT",
+         "generator":
+         {
+           "type": "NORMAL",
+           "mean": 20000,
+           "standard deviation": 5000
+         }
+       }
+     ]
+  },
+
+  // INDEX 2
+  {
+    "name": "index_2",
+    "size": "32 MB",
+    "payload size": 64,
+    "attributes":
+    [
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": 1,
+          "max": 1000
+        }
+      },
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "NORMAL",
+          "mean": 2000,
+          "standard deviation": 100
+        }
+      },
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "NORMAL",
+          "mean": 1000,
+          "standard deviation": 500
+        }
+      },
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": 1,
+          "max": 100000
+        }
+      }
+    ]
+  },
+
+  // Index 3
+  {
+    "name": "index_3",
+    "size": "64 MB",
+    "payload size": 64,
+    "attributes":
+    [
+      {
+        "type": "INT",
+        "generator":{"type":"UNIFORM","min":1,"max":1000}
+      },
+      {
+        "type": "INT",
+        "generator":{"type":"NORMAL","mean":2000,"standard deviation":100}
+      },
+      {
+        "type": "INT",
+        "generator":{"type":"NORMAL","mean":1000,"standard deviation":500}
+      },
+      {
+        "type": "INT",
+        "generator":{"type":"UNIFORM","min":1,"max":100000}
+      },
+      {
+        "type": "INT",
+        "generator":{"type":"UNIFORM","min":1,"max":1000}
+      },
+      {
+        "type": "INT",
+        "generator":{"type":"NORMAL","mean":2000,"standard deviation":100}
+      },
+      {
+        "type": "INT",
+        "generator":{"type":"NORMAL","mean":1000,"standard deviation":500}
+      },
+      {
+        "type": "INT",
+        "generator":{"type":"UNIFORM","min":1,"max":100000}
+      },
+    ]
+  }
+]}

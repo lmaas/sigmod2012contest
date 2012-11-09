@@ -1,0 +1,131 @@
+// Copyright (c) 2012 TU Dresden - Database Technology Group
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy 
+// of this software and associated documentation files (the "Software"), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+// IN THE SOFTWARE.
+
+// WORKLOAD B (Update intensive)
+// 
+// This workload uses a broader range of different key values, which can
+// have substantial impact on some index structures (like many trie based structures).
+// 
+// Note:
+//   This workload is similar to workload b, except for the transaction type
+//   portions, which have been altered to achieve a read/update ratio of 2/3,
+//   instead of the default 3/2.
+
+{
+  "range portion": 10,
+  "point portion": 30,
+  "update portion": 20,
+  "insert portion": 20,
+  "delete portion": 20,
+  "extensive statistics": true,
+  "indices": [
+
+  // INDEX 0
+  {
+    "name": "index_0",
+    "size": "10 MB",
+    "payload size": 8,
+    "attributes":
+    [
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": -9223372036854775808,
+          "max": 9223372036854775807
+        }
+      },
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": -9223372036854775808,
+          "max": 9223372036854775807
+        }
+      },
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": -9223372036854775808,
+          "max": 9223372036854775807
+        }
+      },
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": -9223372036854775808,
+          "max": 9223372036854775807
+        }
+      }
+    ]
+  },
+
+  // INDEX 1
+  {
+     "name": "index_1",
+     "size": "10 MB",
+    "payload size": 8,
+    "attributes":
+    [
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": -9223372036854775808,
+          "max": 9223372036854775807
+        }
+      },
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": -9223372036854775808,
+          "max": 9223372036854775807
+        }
+      },
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": -9223372036854775808,
+          "max": 9223372036854775807
+        }
+      },
+      {
+        "type": "INT",
+        "generator":
+        {
+          "type": "UNIFORM",
+          "min": -9223372036854775808,
+          "max": 9223372036854775807
+        }
+      }
+    ]
+  }
+]}
